@@ -1,28 +1,27 @@
 .nav{ /* панель горизонтального меню */
     background: linear-gradient(to bottom, #e1e1e1, rgb(208, 208, 208) );  /* градиентное 
 закрашивание сверху вниз */ 
-    border-radius: 4px; /* загругляем углы панели */
+    border-radius: 4px;/* загругляем углы панели */
     height: 50px;  /* высота панели (необходимо задавать, так как панель является обычным блоком) */
     padding-top: 0.1px; 
     box-shadow: 5px 3px rgb(165, 165, 165);
-    overflow: hidden;
 }
 
 .nav .pt{ /* пункты основного меню (используется контекстный селектор) дейстувует на элементы класса .pt вложенные в элементы с классом /nav */
-    background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239) );
+    background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239) );  
     text-decoration: none; /* убираем подчеркивание */    
     font-size: 20px;  
     text-align: center;  
     display:block; /* отображаем пункты меню блоками */ 
     float: left;   /* делаем блоки плавающими */     
     border-style: solid;    
-    border-width: 0 0.5px 0 0; 
+    border-width: 0 0.5px 0 0;
     border-radius: 4px;
     padding: 13px  35px;
     margin: 0 1px;
     color: black;
     text-transform: uppercase; /* текст в кнопках верхним регистром  */
-    font-weight: 700;
+    font-weight: 700; 
 }
 
 .nav .pt:hover{ /* меняем фон кнопки при наведении */
@@ -60,6 +59,7 @@
  }
 .nav div:hover div{ /* отображаем выпадающий блок при наведении */
     display: block;
+    z-index: 50;
 }
 
 
