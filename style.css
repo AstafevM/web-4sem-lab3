@@ -1,0 +1,154 @@
+.nav{ /* панель горизонтального меню */
+    background: linear-gradient(to bottom, #e1e1e1, rgb(208, 208, 208) );  /* градиентное 
+закрашивание сверху вниз */ 
+    border-radius: 4px; /* загругляем углы панели */
+    height: 50px;  /* высота панели (необходимо задавать, так как панель является обычным блоком) */
+    padding-top: 0.1px; 
+    box-shadow: 5px 3px rgb(165, 165, 165);
+    overflow: hidden;
+}
+
+.nav .pt{ /* пункты основного меню (используется контекстный селектор) дейстувует на элементы класса .pt вложенные в элементы с классом /nav */
+    background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239) );
+    text-decoration: none; /* убираем подчеркивание */    
+    font-size: 20px;  
+    text-align: center;  
+    display:block; /* отображаем пункты меню блоками */ 
+    float: left;   /* делаем блоки плавающими */     
+    border-style: solid;    
+    border-width: 0 0.5px 0 0; 
+    border-radius: 4px;
+    padding: 13px  35px;
+    margin: 0 1px;
+    color: black;
+    text-transform: uppercase; /* текст в кнопках верхним регистром  */
+    font-weight: 700;
+}
+
+.nav .pt:hover{ /* меняем фон кнопки при наведении */
+    background: linear-gradient(to bottom, rgb(204, 204, 204), rgb(145, 145, 145)  );
+}
+
+.nav div{   /* блоки содержащие выпадающие окна оборачиваем в отедельный блочный элемент */
+    font-size: 20px;  
+    text-align: center;  
+    display:block;  
+    float: left;  
+    position: relative; /* необходимо для корректной работы выпадающих блоков (чтобы вложенный выпадающий блок .drop (position:absolute) позиционировался относительно этого элемента) */
+}
+
+.nav div .drop{ /* блок для вложенных пунктов меню */
+    position: absolute;  /* вынимаем из нормального потока, чтобы отображать поверх другого контента при  необходимости */  
+    display: none;       
+    top:100%;  /* смещаем относительно верхней стороны на 100 %, т.е. на всю высоту*/ 
+    left:0%; 
+}  
+
+.drop_item{  /* оформление вложенных пунктов меню в блоке .nav div .drop*/
+    text-decoration: none; 
+    display: block;      
+    background: linear-gradient(to bottom,  #e3e3e3, rgb(239, 239, 239) );
+    color: black;   
+    border-style: solid;
+    border-width: 0 0.5px 0 0;
+    border-radius: 4px;
+    padding: 13px  35px;   
+ }
+
+.drop_item:hover{ /* изменение цвета вложенного меню при наведении */
+    background: linear-gradient(to bottom, rgb(204, 204, 204), rgb(145, 145, 145));
+ }
+.nav div:hover div{ /* отображаем выпадающий блок при наведении */
+    display: block;
+}
+
+
+.main {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.column {
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #e1e1e1, rgb(208, 208, 208) );
+    border-radius: 4px;
+    box-shadow: 5px 3px rgb(165, 165, 165);
+}
+
+.column.side {
+    width: 15%;
+    padding: 16px 8px 8px 16px;
+}
+
+.column.side.left {
+    float: left;
+    margin-right: 6px;
+}
+
+.column.side.right {
+    float: right;
+    margin-left: 6px;
+}
+
+.column.center {
+    overflow: hidden;
+    padding: 0;
+}
+
+
+.info-panel {
+    box-sizing: border-box;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 3px 3px rgb(165, 165, 165);
+    padding: 3px;
+    font-size: 15px;
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+.info-panel:last-child {
+    margin-bottom: 0;
+}
+
+.info-panel-title {
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: rgb(120, 126, 233);
+    text-align: center;
+}
+
+
+.social-tile {
+    position: relative;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 0;
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.social-tile img {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.social-tile a {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    width:  inherit;
+    height: 50%;
+    text-decoration: none;
+    background-color: rgba(102, 157, 234, 0.45);
+    transition: top 0.3s ease;
+}
+
+.social-tile:hover a {
+    top: 75%;
+}
